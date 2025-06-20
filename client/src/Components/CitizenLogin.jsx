@@ -25,7 +25,11 @@ const CitizenLogin = () => {
         }
       );
       window.localStorage.setItem("isLoggedIn", "true");
-      window.localStorage.setItem("role", "citizen");
+      window.localStorage.setItem("role", "citizen");const [isAuth, setIsAuth] = useState(null);
+        const role = window.localStorage.getItem("role");
+        const isLoggedIn = window.localStorage.getItem("isLoggedIn");
+      setIsAuth(role === "citizen" && isLoggedIn === "true");
+      console.log(isAuth);
       setError(false);
       navigate("/dashboard/citizen");
       setSuccess(true);
