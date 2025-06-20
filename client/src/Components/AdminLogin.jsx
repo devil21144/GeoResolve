@@ -14,7 +14,7 @@ const AdminLogin = () => {
   const navigate = useNavigate();
   const handleSubmit = async () => {
     try {
-      const results = await axios.post("http://localhost:5000/login/admin", {
+      const results = await axios.post("http:///login/admin", {
         username,
         password,
       });
