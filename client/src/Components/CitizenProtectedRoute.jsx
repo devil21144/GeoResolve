@@ -5,8 +5,8 @@ import { Navigate, Outlet } from "react-router-dom";
 const CitizenProtectedRoute = () => {
   const [isAuth, setIsAuth] = useState(null);
   useEffect(() => {
-    const role = window.sessionStorage.getItem("role");
-    const isLoggedIn = window.sessionStorage.getItem("isLoggedIn");
+    const role = window.localStorage.getItem("role");
+    const isLoggedIn = window.localStorage.getItem("isLoggedIn");
     setIsAuth(role === "citizen" && isLoggedIn=== "true");
   }, []);
     if (isAuth === null) return null;

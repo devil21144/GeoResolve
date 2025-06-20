@@ -25,8 +25,8 @@ const CitizenLogin = () => {
         }
       );
       if (results.statusText === "OK") {
-        window.sessionStorage.setItem("isLoggedIn", "true");
-        window.sessionStorage.setItem("role", "citizen");
+        window.localStorage.setItem("isLoggedIn", "true");
+        window.localStorage.setItem("role", "citizen");
       }
       setError(false);
       navigate("/dashboard/citizen");

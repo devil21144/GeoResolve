@@ -16,7 +16,7 @@ const CitizenRegistration = () => {
   const [errmessage, setErrMessage] = useState("");
   const [success, setSuccess] = useState(false);
   const handleSubmit = async () => {
-    window.sessionStorage.setItem("username", username);
+    window.localStorage.setItem("username", username);
     try {
       await axios.post("https://georesolve.onrender.com/register/citizen", {
         username,

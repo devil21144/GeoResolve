@@ -13,7 +13,7 @@ const OTP = () => {
   const [success, setSuccess] = useState();
   const [errMessage, setErrorMessage] = useState();
   const handleSubmit = async () => {
-    const username = window.sessionStorage.getItem("username");
+    const username = window.localStorage.getItem("username");
     try {
       const results = await axios.post("http://localhost:5001/otp", {
         otp,
