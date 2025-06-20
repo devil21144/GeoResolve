@@ -15,7 +15,6 @@ const CitizenLogin = () => {
   const [success, setSuccess] = useState(false);
   const [errMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
-  const [isAuth, setIsAuth] = useState(null); 
   const handleSubmit = async () => {
     try {
       const results = await axios.post(
@@ -27,10 +26,6 @@ const CitizenLogin = () => {
       );
       window.localStorage.setItem("isLoggedIn", "true");
       window.localStorage.setItem("role", "citizen");
-        const role = window.localStorage.getItem("role");
-        const isLoggedIn = window.localStorage.getItem("isLoggedIn");
-      setIsAuth(role === "citizen" && isLoggedIn === "true");
-      console.log(isAuth);
       setError(false);
       navigate("/dashboard/citizen");
       setSuccess(true);
