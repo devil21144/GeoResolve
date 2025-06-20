@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { House, LogIn, UserRoundSearch } from "lucide-react";
 import Tooltip from "@mui/material/Tooltip";
@@ -7,7 +6,6 @@ import axios from "axios";
 import TextField from "@mui/material/TextField";
 import { useState } from "react";
 import Alert from "@mui/material/Alert";
-import { useEffect } from "react";
 const CitizenLogin = () => {
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
@@ -17,7 +15,7 @@ const CitizenLogin = () => {
   const navigate = useNavigate();
   const handleSubmit = async () => {
     try {
-      const results = await axios.post(
+      await axios.post(
         "https://georesolve.onrender.com/login/citizen",
         {
           username,

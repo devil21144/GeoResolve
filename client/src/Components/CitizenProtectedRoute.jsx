@@ -1,6 +1,3 @@
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 const CitizenProtectedRoute = () => {
   const role = window.sessionStorage.getItem("role");
