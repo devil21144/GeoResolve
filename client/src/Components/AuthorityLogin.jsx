@@ -28,8 +28,8 @@ const AuthorityLogin = () => {
       }
       setError(false);
       setSuccess(true);
-      window.localStorage.setItem("isLoggedIn", "true");
-      window.localStorage.setItem("role", "authority");
+      window.sessionStorage.setItem("isLoggedIn", "true");
+      window.sessionStorage.setItem("role", "authority");
     } catch (err) {
       console.log(err);
       setError(true);

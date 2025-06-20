@@ -21,7 +21,7 @@ const AuthorityRegister = () => {
   const [district, setDistrict] = useState();
   const [village, setVillage] = useState();
   const handleSubmit = async () => {
-    window.localStorage.setItem("username", username);
+    window.sessionStorage.setItem("username", username);
     try {
       const results = await axios.post(
         "https://georesolve.onrender.com/register/authority",

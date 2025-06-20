@@ -3,13 +3,9 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 const AuthorityProtectedRoute = () => {
-  const [isAuth, setIsAuth] = useState(null);
-  useEffect(() => {
-    const role = window.localStorage.getItem("role");
-    const isLoggedIn = window.localStorage.getItem("isLoggedIn");
-      setIsAuth(isLoggedIn && role === "authority");
-  }, []);
-  if (isAuth === null) return null;
+  const isLoggedIn = window.sessionStorage.getItem('isLoggedIn');
+  const role = window.sessionStorage.getItem('role');
+  const isAuth=role==='authority' && isLoggedIn==='true'
   return isAuth ? <Outlet /> : <Navigate to="/login" />;
 };
 
