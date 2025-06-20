@@ -28,6 +28,7 @@ const AuthorityLogin = () => {
       setSuccess(true);
       window.sessionStorage.setItem("isLoggedIn", "true");
       window.sessionStorage.setItem("role", "authority");
+      window.sessionStorage.setItem("username", username);
     } catch (err) {
       console.log(err);
       setError(true);

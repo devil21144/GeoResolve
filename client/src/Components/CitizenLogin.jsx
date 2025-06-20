@@ -23,6 +23,7 @@ const CitizenLogin = () => {
         }
       );
       window.sessionStorage.setItem("isLoggedIn", "true");
+      window.sessionStorage.setItem("username", username);
       window.sessionStorage.setItem("role", "citizen");
       setError(false);
       navigate("/dashboard/citizen");
