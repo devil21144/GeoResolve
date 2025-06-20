@@ -15,7 +15,7 @@ const OTP = () => {
   const handleSubmit = async () => {
     const username = window.localStorage.getItem("username");
     try {
-      const results = await axios.post("http://localhost:5001/otp", {
+      const results = await axios.post("https://georesolve.onrender.com/otp", {
         otp,
         username,
       });
