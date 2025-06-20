@@ -23,8 +23,8 @@ const AdminLogin = () => {
       }
       setErr(false);
       setSuccess(true);
-      window.sessionStorage.setItem("isLoggedIn", "true");
-      window.sessionStorage.setItem("role", "admin");
+      window.localStorage.setItem("isLoggedIn", "true");
+      window.localStorage.setItem("role", "admin");
     } catch (err) {
       const message =
         err.response?.data?.message || err.message || "Internal Server Error";
