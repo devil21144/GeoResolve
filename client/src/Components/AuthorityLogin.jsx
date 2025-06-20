@@ -23,9 +23,7 @@ const AuthorityLogin = () => {
           password,
         }
       );
-      if (results.statusText === "OK") {
-        navigate("/dashboard/authority");
-      }
+      navigate("/dashboard/authority");
       setError(false);
       setSuccess(true);
       window.sessionStorage.setItem("isLoggedIn", "true");
