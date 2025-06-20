@@ -24,7 +24,7 @@ const AuthorityRegister = () => {
     window.sessionStorage.setItem("username", username);
     try {
       const results = await axios.post(
-        "http://localhost:5001/register/authority",
+        "https://georesolve.onrender.com/register/authority",
         {
           username,
           age,
@@ -185,7 +185,8 @@ const AuthorityRegister = () => {
           {errr && <Alert severity="error">{errmessage}</Alert>}
           {success && (
             <Alert severity="success">
-              Registration Successful <br />Please wait till an admin accepts your request.
+              Registration Successful <br />
+              Please wait till an admin accepts your request.
             </Alert>
           )}
           <Button onClick={handleSubmit} variant="contained" color="secondary">

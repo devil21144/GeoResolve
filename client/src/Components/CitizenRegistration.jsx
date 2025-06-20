@@ -18,19 +18,16 @@ const CitizenRegistration = () => {
   const handleSubmit = async () => {
     window.sessionStorage.setItem("username", username);
     try {
-      await axios.post(
-        "http://localhost:5001/register/citizen",
-        {
-          username,
-          age,
-          password,
-          email,
-          phoneno,
-        }
-      );
+      await axios.post("https://georesolve.onrender.com/register/citizen", {
+        username,
+        age,
+        password,
+        email,
+        phoneno,
+      });
       setSuccess(true);
       setErr(false);
-      navigate('/otp');
+      navigate("/otp");
     } catch (err) {
       const message =
         err.response?.message || err.message || "Internal Server error";
@@ -147,11 +144,7 @@ const CitizenRegistration = () => {
             }}
           />
           {errr && <Alert severity="error">{errmessage}</Alert>}
-          {success && (
-            <Alert severity="success">
-              Registration Successful
-            </Alert>
-          )}
+          {success && <Alert severity="success">Registration Successful</Alert>}
           <Button onClick={handleSubmit} variant="contained" color="secondary">
             Submit
           </Button>

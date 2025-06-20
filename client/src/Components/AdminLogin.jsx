@@ -14,10 +14,13 @@ const AdminLogin = () => {
   const navigate = useNavigate();
   const handleSubmit = async () => {
     try {
-      const results = await axios.post("http:///login/admin", {
-        username,
-        password,
-      });
+      const results = await axios.post(
+        "https://georesolve.onrender.com/login/admin",
+        {
+          username,
+          password,
+        }
+      );
       if (results.statusText === "OK") {
         navigate("/dashboard/admin");
       }

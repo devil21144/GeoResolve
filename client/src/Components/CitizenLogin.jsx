@@ -17,10 +17,13 @@ const CitizenLogin = () => {
   const navigate = useNavigate();
   const handleSubmit = async () => {
     try {
-      const results = await axios.post("http://localhost:5001/login/citizen", {
-        username,
-        password,
-      });
+      const results = await axios.post(
+        "https://georesolve.onrender.com/login/citizen",
+        {
+          username,
+          password,
+        }
+      );
       if (results.statusText === "OK") {
         window.sessionStorage.setItem("isLoggedIn", "true");
         window.sessionStorage.setItem("role", "citizen");

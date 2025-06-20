@@ -17,7 +17,7 @@ const AuthorityLogin = () => {
   const handleSubmit = async () => {
     try {
       const results = await axios.post(
-        "http://localhost:5001/login/authority",
+        "https://georesolve.onrender.com/login/authority",
         {
           username,
           password,
