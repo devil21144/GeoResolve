@@ -21,9 +21,7 @@ const AdminLogin = () => {
           password,
         }
       );
-      if (results.statusText === "OK") {
-        navigate("/dashboard/admin");
-      }
+      navigate("/dashboard/admin");
       setErr(false);
       setSuccess(true);
       window.sessionStorage.setItem("isLoggedIn", "true");
