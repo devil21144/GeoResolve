@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, UserSearch, UserX } from "lucide-react";
+import { Menu, X, UserSearch, UserX, Search, UserLock, Users } from "lucide-react";
 const AdminDashboard = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
@@ -27,9 +27,21 @@ const AdminDashboard = () => {
           <nav className="text-white mt-6 flex flex-col items-center">
             <a href="/admin/searchauthority">
               {sidebarOpen ? "Search Authority" : <UserSearch />}
-            </a><br />
+            </a>
+            <br />
             <a href="/admin/deleteauthority">
               {sidebarOpen ? "Delete Authority" : <UserX />}
+            </a>
+            <br />
+            <a href="/admin/searchproblems">
+              {sidebarOpen ? "Search Problems" : <Search />}
+            </a>
+            <br />
+            <a href="/admin/viewadmin">
+              {sidebarOpen ? "View Admins" : <UserLock />}
+            </a><br />
+            <a href="/admin/searchcitizen">
+              {sidebarOpen ? "Search Citizens" : <Users />}
             </a>
           </nav>
         </div>

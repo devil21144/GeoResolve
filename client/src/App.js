@@ -9,7 +9,6 @@ import CitizenRegistration from "./Components/CitizenRegistration";
 import OTP from "./Components/OTP";
 import AdminDashboard from "./Components/AdminDashboard";
 import CitizenLogin from "./Components/CitizenLogin";
-import { Analytics } from "@vercel/analytics/react";
 import AuthorityLogin from "./Components/AuthorityLogin";
 import AdminLogin from "./Components/AdminLogin";
 import CitizenDashboard from "./Components/CitizenDashboard";

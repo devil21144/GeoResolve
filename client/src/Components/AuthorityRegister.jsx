@@ -1,12 +1,11 @@
-import React, { useState } from "react";
-import Tooltip from "@mui/material/Tooltip";
-import TextField from "@mui/material/TextField";
-import { CheckIcon } from "lucide-react";
-import { House, LogIn, UserRoundSearch } from "lucide-react";
-import { useNavigate } from "react-router-dom";
-import Button from "@mui/material/Button";
 import Alert from "@mui/material/Alert";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import Tooltip from "@mui/material/Tooltip";
 import axios from "axios";
+import { House, LogIn, UserRoundSearch } from "lucide-react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 const AuthorityRegister = () => {
   const [role, setRole] = useState();
   const navigate = useNavigate();
@@ -43,7 +42,6 @@ const AuthorityRegister = () => {
     } catch (err) {
       const message =
         err.response?.message || err.message || "Internal Server error";
-      const code = err.response?.status || err.statusCode || 500;
       setErr(true);
       setSuccess(false);
       console.log(message);
