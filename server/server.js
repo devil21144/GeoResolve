@@ -307,10 +307,20 @@ app.post("/login/authority", async (req, res) => {
 });
 app.post("/admin/searchauthority", async (req, res) => {
   try {
-    const results = await db.query(
-      "select username, age, email, phoneno, role from authority where (district=lower($1) and village=lower($2))",
-      [req.body.district, req.body.village]
-    );
+    const { district, village, role } = req.body;
+
+    const query = `
+      SELECT username, age, email, phoneno, role
+      FROM authority
+      WHERE 
+        ($1::text IS NULL OR $1 = '' OR LOWER(district) = LOWER($1)) AND
+        ($2::text IS NULL OR $2 = '' OR LOWER(village) = LOWER($2)) AND
+        ($3::text IS NULL OR $3 = '' OR LOWER(role) = LOWER($3))
+    `;
+
+    const values = [district || "", village || "", role || ""];
+
+    const results = await db.query(query, values);    
     if (results.rows.length === 0) {
       const err = new Error("No Authority found");
       throw err;
