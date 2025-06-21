@@ -17,6 +17,10 @@ import AuthorityDashboard from "./Components/AuthorityDashboard";
 import AdminProtectedRoute from "./Components/AdminProtectedRoute";
 import AuthorityProtectedRoute from "./Components/AuthorityProtectedRoute";
 import CitizenProtectedRoute from "./Components/CitizenProtectedRoute";
+import SearchAuthorityAdmin from "./Components/SearchAuthorityAdmin";
+import DeleteAuthorityAdmin from "./Components/DeleteAuthorityAdmin";
+import SearchProblemsAdmin from "./Components/SearchProblemsAdmin";
+import ViewAdminBelowClearance from "./Components/ViewAdminBelowClearance";
 
 const App = () => {
   return (
@@ -38,6 +42,23 @@ const App = () => {
         <Route path="/login/admin" element={<AdminLogin />}></Route>
         <Route element={<AdminProtectedRoute />}>
           <Route path="/dashboard/admin" element={<AdminDashboard />}></Route>
+          <Route
+            path="/admin/searchauthority"
+            element={<SearchAuthorityAdmin />}
+          ></Route>
+          <Route
+            path="/admin/searchcitizen"
+            element={<DeleteAuthorityAdmin />}
+          ></Route>
+          <Route
+            path="/admin/searchproblems"
+            element={<SearchProblemsAdmin />}
+          ></Route>
+          <Route
+            path="/admin/deleteauthority"
+            element={<DeleteAuthorityAdmin />}
+          ></Route>
+          <Route path="/admin/viewadmin" element={<ViewAdminBelowClearance/>}></Route>
         </Route>
         <Route element={<CitizenProtectedRoute />}>
           <Route

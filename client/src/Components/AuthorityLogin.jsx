@@ -16,13 +16,10 @@ const AuthorityLogin = () => {
   const [errMessage, setErrorMessage] = useState();
   const handleSubmit = async () => {
     try {
-      const results = await axios.post(
-        "https://georesolve.onrender.com/login/authority",
-        {
-          username,
-          password,
-        }
-      );
+      await axios.post("https://georesolve.onrender.com/login/authority", {
+        username,
+        password,
+      });
       navigate("/dashboard/authority");
       setError(false);
       setSuccess(true);
